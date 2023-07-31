@@ -1,6 +1,5 @@
 #include "main.h"
 /**
- * @haystack: input
  * _strstr - Entry point
  * @haystack: input
  * @needle: input
