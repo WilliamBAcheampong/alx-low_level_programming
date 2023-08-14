@@ -2,15 +2,15 @@
 #include "dog.h"
 
 /**
- * @k: struct dog to free
  * free_dog - frees memory allocated for a struct dog
+ * @d: struct dog to free
  */
-void free_dog(dog_f *k)
+void free_dog(dog_t *d)
 {
-	if (k)
+	if (d)
 	{
-		free(k->name);
-		free(k->owner);
-		free(k);
+		free(d->name);
+		free(d->owner);
+		free(d);
 	}
 }

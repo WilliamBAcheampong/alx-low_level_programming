@@ -1,112 +1,72 @@
 #include <stdlib.h>
 #include "dog.h"
-/**
- * init_dog - initializes a variable of type struct dog
- * @k: pointer to struct dog to initialize
- * @name: name to initialize
-  * @owner: owner to initialize
-  * @age: age to initialize
-*/
-void init_dog(struct dog *k, char *name, float age, char *owner)
-{
-	if (k == NULL)
-		k = malloc(sizeof(struct dog));
-	k->name = name;
-	k->age = age;
-	k->owner = owner;
-}
-
-
-#include <stdlib.h>
-#include <stdio.h>
-#include "dog.h"
-/**
- * print_dog - prints a struct dog
- * @k: struct dog to print
- */
-void print_dog(struct dog *k)
-{
-	if (k == NULL)
-		return;
-
-	if (k->name == NULL)
-		k->name = "(nil)";
-	if (k->owner == NULL)
-		k->owner = "(nil)";
-
-	printf("Name: %s\nAge: %f\nOwner: %s\n", k->name, k->age, k->owner);
-}
-
-
-
-#include <stdlib.h>
-#include "dog.h"
 
 /**
  * _strlen - returns the length of a string
- * @x: string to evaluate
+ * @s: string to evaluate
+ *
  * Return: the length of the string
  */
-int _strlen(char *x)
+int _strlen(char *s)
 {
-	int r;
+	int i;
 
-	r = 0;
+	i = 0;
 
-	while (s[r] != '\0')
+	while (s[i] != '\0')
 	{
-		r++;
+		i++;
 	}
 
-	return (r);
+	return (i);
 }
 
 /**
- * *_strcpy - copies the string pointed to by strc
- * @strc: string to be copied
- * to the buffer pointed to by desti
+ * *_strcpy - copies the string pointed to by src
  * including the terminating null byte (\0)
- * to the buffer pointed to by desti
- * @desti: pointer to the buffer in which we copy the string
- * @strc: string to be copied
- * Return: the pointer to desti
+ * to the buffer pointed to by dest
+ * @dest: pointer to the buffer in which we copy the string
+ * @src: string to be copied
+ *
+ * Return: the pointer to dest
  */
-char *_strcpy(char *desti, char *strc)
+char *_strcpy(char *dest, char *src)
 {
-	int len, r;
+	int len, i;
 
 	len = 0;
 
-	while (strc[len] != '\0')
+	while (src[len] != '\0')
 	{
 		len++;
 	}
 
-	for (r = 0; r < len; r++)
+	for (i = 0; i < len; i++)
 	{
-		desti[r] = src[r];
+		dest[i] = src[i];
 	}
-	desti[r] = '\0';
+	dest[i] = '\0';
 
-	return (desti);
+	return (dest);
 }
 
 /**
  * new_dog - creates a new dog
- * @age: age of the dog
  * @name: name of the dog
+ * @age: age of the dog
  * @owner: owner of the dog
+ *
  * Return: pointer to the new dog (Success), NULL otherwise
  */
-dog_f *new_dog(char *name, float age, char *owner)
+dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_f *dog;
+	dog_t *dog;
 	int len1, len2;
 
 	len1 = _strlen(name);
 	len2 = _strlen(owner);
 
-	dog = malloc(sizeof(dog_f));
+	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);
 
