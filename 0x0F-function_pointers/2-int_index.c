@@ -1,21 +1,21 @@
 #include "function_pointers.h"
 /**
-  * @array1: array
- * @sizeofe: size of elements in array
+ * int_index - return index place if comparison = true, else -1
+ * @array: array
+ * @size: size of elements in array
  * @cmp: pointer to func of one of the 3 in main
- * int_index - returns index place if comparison = true, else return -1
  * Return: 0
  */
-int int_index(int *array1, int sizeofe, int (*cmp)(int))
+int int_index(int *array, int size, int (*cmp)(int))
 {
-	int j;
+	int i;
 
-	if (array1 == NULL || sizeofe <= 0 || cmp == NULL)
+	if (array == NULL || size <= 0 || cmp == NULL)
 		return (-1);
 
-	for (j = 0; j < sizeofe; j++)
+	for (i = 0; i < size; i++)
 	{
-		if (cmp(array1[i]))
+		if (cmp(array[i]))
 			return (i);
 	}
 	return (-1);

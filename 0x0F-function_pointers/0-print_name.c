@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include "function_pointers.h"
 /**
- * print_sname – using pointer to function, print name
- * @f: pointer to function
- *  @sname: string to add
- * Return: nothing
+ * print_name - print name using pointer to function
+* @f: pointer to function
+ * @name: string to add
+  * Return: nothing
  **/
-void print_sname(char *sname, void (*f)(char *))
+void print_name(char *name, void (*f)(char *))
 {
-	if (sname == NULL || f == NULL)
+	if (name == NULL || f == NULL)
 		return;
 
-	f(sname);
+	f(name);
 }
