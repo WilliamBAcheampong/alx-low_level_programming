@@ -1,20 +1,21 @@
 #include "lists.h"
 
 /**
- * listint_len - returns the number of elements in a linked lists
- * @h: linked list of type listint_t to traverse
+ * sum_listint - calculates the sum of all the data in a listint_t list
+ * @head: first node in the linked list
  *
- * Return: number of nodes
+ * Return: resulting sum
  */
-size_t listint_len(const listint_t *h)
+int sum_listint(listint_t *head)
 {
-	size_t num = 0;
+	int sum = 0;
+	listint_t *temp = head;
 
-	while (h)
+	while (temp)
 	{
-		num++;
-		h = h->next;
+		sum += temp->n;
+		temp = temp->next;
 	}
 
-	return (num);
+	return (sum);
 }
