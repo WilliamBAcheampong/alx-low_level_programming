@@ -1,5 +1,7 @@
 #include "main.h"
 #include <stdio.h>
+#include <unistd.h>  // Include for write function
+#include <string.h>  // Include for strchr function
 
 int _putchar(char c) {
     return write(1, &c, 1);
@@ -192,4 +194,3 @@ char *_strstr(char *haystack, char *needle) {
 
     return NULL;
 }
-
